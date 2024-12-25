@@ -1,5 +1,5 @@
 # Builder stage
-FROM python:3.11-slim AS builder
+FROM python:3.12-slim AS builder
 
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 
@@ -15,11 +15,11 @@ ADD app     /fastapi/app
 ADD models  /fastapi/models
 
 # Runner stage
-FROM python:3.11-slim AS runner
+FROM python:3.12-slim AS runner
 
 WORKDIR /fastapi/
 
-COPY --from=builder /usr/local/lib/python3.11   /usr/local/lib/python3.11
+COPY --from=builder /usr/local/lib/python3.12   /usr/local/lib/python3.12
 COPY --from=builder /usr/local/bin/*            /usr/local/bin/
 COPY --from=builder /fastapi/                   /fastapi/
 ADD pyproject.toml uv.lock                      /fastapi/
