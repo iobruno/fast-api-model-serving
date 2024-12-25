@@ -3,11 +3,11 @@ name = "fastapi-tfserve"
 version = "1.0"
 description = "FastAPI for serving Tensorflow Models"
 readme = "README.md"
-requires-python = ">=3.10,<3.12"
+requires-python = ">=3.10,<3.13"
 
 dependencies = [
     "fastapi>=0.115.6,<1.0",
-    "uvicorn>=0.32.1,<1.0",
+    "uvicorn>=0.34.0,<1.0",
     "httpx>=0.28.1,<1.0",
     "pillow>=11.0.0,<12.0",
     "h5py>=3.12.1,<4.0",
@@ -19,8 +19,8 @@ dependencies = [
 [dependency-groups]
 dev = [
     "pytest>=8.3.4,<9.0",
-    "ruff>=0.8.2",
-    "jupyterlab>=4.3.2", 
+    "ruff>=0.8.4",
+    "jupyterlab>=4.3.4",
 ]
 
 [tool.ruff]
