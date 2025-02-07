@@ -1,49 +1,36 @@
 # FastAPI TensorFlow Serving
 
-![Python](https://img.shields.io/badge/Python-3.12_|_3.11_|_3.10-4B8BBE.svg?style=flat&logo=python&logoColor=FFD43B&labelColor=306998)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-2.18-FF7400.svg?style=flat&logo=tensorflow&logoColor=FF7400&labelColor=212121)
-![FastAPI](https://img.shields.io/badge/FastAPI-0.115-009688.svg?style=flat&logo=FastAPI&logoColor=009688&labelColor=212121)
-![Jupyter](https://img.shields.io/badge/Jupyter-31393F.svg?style=flat&logo=jupyter&logoColor=F37726&labelColor=31393F)
-![Docker](https://img.shields.io/badge/Docker-329DEE?style=flat&logo=docker&logoColor=white&labelColor=329DEE)
+![Python](https://img.shields.io/badge/Python-3.12-4B8BBE.svg?style=flat&logo=python&logoColor=FFD43B&labelColor=306998)
+[![TensorFlow](https://img.shields.io/badge/TensorFlow-2.18-FF7400.svg?style=flat&logo=tensorflow&logoColor=FF7400&labelColor=212121)](https://www.tensorflow.org/guide)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.115-009688.svg?style=flat&logo=FastAPI&logoColor=009688&labelColor=212121)](https://fastapi.tiangolo.com/tutorial/)
+[![uv](https://img.shields.io/badge/astral/uv-261230?style=flat&logo=uv&logoColor=DE5FE9&labelColor=261230)](https://docs.astral.sh/uv/getting-started/installation/)
+[![Docker](https://img.shields.io/badge/Docker-329DEE?style=flat&logo=docker&logoColor=white&labelColor=329DEE)](https://docs.docker.com/get-docker/)
 
 ![License](https://img.shields.io/badge/license-CC--BY--SA--4.0-31393F?style=flat&logo=creativecommons&logoColor=black&labelColor=white)
 
 GitHub project for Tensorflow-based Object Detection on the CIFAR-10 dataset, served with FastAPI.
 
-## Tech Stack
-- [Tensorflow 2](https://www.tensorflow.org/guide)
-- [FastAPI](https://fastapi.tiangolo.com/tutorial/)
-- [uv](https://docs.astral.sh/uv/concepts/projects/dependencies/)
-- [Docker](https://docs.docker.com/get-docker/)
 
-## Up and Running
+## Getting Started
 
-### Developer Setup 
-
-**1.** Install the dependencies on `pyproject.toml`:
+**1.** Install dependencies from pyproject.toml and activate the created virtualenv:
 ```shell
-uv sync
+uv sync && source .venv/bin/activate
 ```
 
-**2.** Activate the virtualenv created by `uv`:
-```shell
-source .venv/bin/activate
-```
-
-**3.** Start the app with `gunicorn` with:
+**2.** Start the app with `gunicorn` with:
 ```shell
 make run
 ```
 
-**4.** Access the Swagger UI at:
-```
+**3.** Access the Swagger UI at:
+```shell
 open http://localhost:8080
 ```
 
-## Containerization and Testing
+## Containerization
 
 **1.** Build the Docker Image with:
-
 ```shell
 make docker-image
 ```
@@ -58,7 +45,7 @@ make docker-run
 open http://localhost:8000
 ```
 
-## TODO
+## TODO's:
 - [x] PEP-517: Packaging and dependency management with `uv`
 - [x] Code format/lint with Ruff
 - [x] Run on Docker
